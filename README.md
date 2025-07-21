@@ -38,3 +38,14 @@ Financial inequality is often invisible. This project aims to make wage disparit
 
 ## Folder Structure
 
+backend/
+├── app/
+│   ├── main.py         # entry point
+│   ├── routers/        # API routes
+│   ├── models/         # Pydantic models (request/response)
+│   ├── services/       # your logic for rent/wage gap, etc.
+│   └── data/           # static data, CSVs, etc.
+├── requirements.txt
+└── README.md
+
+

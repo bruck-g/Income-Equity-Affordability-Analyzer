@@ -40,12 +40,10 @@ Financial inequality is often invisible. This project aims to make wage disparit
 
 backend/
 ├── app/
-│   ├── main.py         # entry point
-│   ├── routers/        # API routes
-│   ├── models/         # Pydantic models (request/response)
-│   ├── services/       # your logic for rent/wage gap, etc.
-│   └── data/           # static data, CSVs, etc.
-├── requirements.txt
-└── README.md
-
-
+│   ├── main.py          # Entry point for the FastAPI app
+│   ├── routers/         # API route handlers (e.g., /analyze, /wage-gap)
+│   ├── models/          # Pydantic models (request/response schemas)
+│   ├── services/        # Core logic (calculations, comparisons, etc.)
+│   └── data/            # Static data (CSVs, JSONs, etc.)
+├── requirements.txt     # Python dependencies
+└── README.md            # Project overview & setup instructions

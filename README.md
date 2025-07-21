@@ -29,8 +29,10 @@ Financial inequality is often invisible. This project aims to make wage disparit
 ## Tech Stack
 
 - Frontend: React, Tailwind CSS, Chart.js
+- Backend: Python, FastAPI
 - Data Sources: MIT Living Wage Calculator, BLS job wage data, Pew Research
 - Deployment: Vercel or Netlify (static client)
+  
 
 ---
 

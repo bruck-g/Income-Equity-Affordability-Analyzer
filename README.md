@@ -29,10 +29,21 @@ Financial inequality is often invisible. This project aims to make wage disparit
 ## Tech Stack
 
 - Frontend: React, Tailwind CSS, Chart.js
+- Backend: Python, FastAPI
 - Data Sources: MIT Living Wage Calculator, BLS job wage data, Pew Research
 - Deployment: Vercel or Netlify (static client)
+  
 
 ---
 
 ## Folder Structure
 
+backend/
+├── app/
+│   ├── main.py          # Entry point for the FastAPI app
+│   ├── routers/         # API route handlers (e.g., /analyze, /wage-gap)
+│   ├── models/          # Pydantic models (request/response schemas)
+│   ├── services/        # Core logic (calculations, comparisons, etc.)
+│   └── data/            # Static data (CSVs, JSONs, etc.)
+├── requirements.txt     # Python dependencies
+└── README.md            # Project overview & setup instructions

@@ -37,3 +37,15 @@ Financial inequality is often invisible. This project aims to make wage disparit
 ---
 
 ## Folder Structure
+
+```plaintext
+backend/
+├── app/
+│   ├── main.py          # Entry point for the FastAPI app
+│   ├── routers/         # API route handlers (e.g., /analyze, /wage-gap)
+│   ├── models/          # Pydantic models (request/response schemas)
+│   ├── services/        # Core logic (calculations, comparisons, etc.)
+│   └── data/            # Static data (CSVs, JSONs, etc.)
+├── requirements.txt     # Python dependencies
+└── README.md            # Project overview & setup instructions
+```

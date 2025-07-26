@@ -6,6 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
+import { db } from "@/firebase";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+
 interface FormData {
   jobTitle: string;
   monthlyIncome: string;
@@ -20,6 +23,17 @@ interface InputFormProps {
   onAnalyze: (data: FormData) => void;
 }
 
+interface SubmissionData {
+  jobTitle: string;
+  monthlyIncome: number;
+  monthlyRent: number;
+  zipCode: string;
+  race: string;
+  gender: string;
+  rentBurden: number;
+  timestamp: Timestamp;
+}
+
 export function InputForm({ onBack, onAnalyze }: InputFormProps) {
   const [formData, setFormData] = useState<FormData>({
     jobTitle: "",
@@ -30,12 +44,35 @@ export function InputForm({ onBack, onAnalyze }: InputFormProps) {
     gender: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (Object.values(formData).every(value => value !== "")) {
-      onAnalyze(formData);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  if (Object.values(formData).every((value) => value !== "")) {
+    onAnalyze(formData);
+
+    const income = parseFloat(formData.monthlyIncome);
+    const rent = parseFloat(formData.monthlyRent);
+    const rentBurden = rent / income;
+
+    const submissionData: SubmissionData = {
+      jobTitle: formData.jobTitle,
+      monthlyIncome: income,
+      monthlyRent: rent,
+      zipCode: formData.location,
+      race: formData.race,
+      gender: formData.gender,
+      rentBurden,
+      timestamp: Timestamp.now(),
+    };
+
+    try {
+      await addDoc(collection(db, "submissions"), submissionData);
+      console.log("Data saved to Firestore!");
+    } catch (error) {
+      console.error("Error saving data to Firestore:", error);
     }
-  };
+  }
+};
+
 
   const updateField = (field: keyof FormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));

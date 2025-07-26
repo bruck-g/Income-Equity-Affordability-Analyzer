@@ -1,0 +1,43 @@
+#  Income Equity & Affordability Analyzer
+
+A backend API built with **FastAPI** to analyze wage equity, rent burden, and financial pressure based on demographic, location, and income data.
+
+---
+
+##  What It Does
+
+Given user input like:
+- Job title
+- Monthly income
+- Monthly rent
+- Race, gender, and location (ZIP or city)
+
+The API returns:
+- 💸 Wage gap compared to overall & demographic average
+- 🏠 Rent burden percentage
+- ⚖️ Comparison to local living wage
+- 📊 Financial Pressure Score (low, medium, high)
+- 💬 Suggestion for salary negotiation
+
+---
+
+## 🛠️ Tech Stack
+
+- **FastAPI** – Web framework
+- **Uvicorn** – Server
+- **CSV files** – For wage/living cost data
+
+---
+
+##  Folder Structure
+
+```plaintext
+backend/
+├── app/
+│   ├── main.py
+│   ├── routers/
+│   ├── models/
+│   ├── services/
+│   └── data/
+├── requirements.txt
+└── README.md

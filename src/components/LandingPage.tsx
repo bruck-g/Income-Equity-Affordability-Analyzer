@@ -23,7 +23,7 @@ export function LandingPage({ onStartAnalysis }: LandingPageProps) {
             onClick={onStartAnalysis}
             size="lg"
             variant="secondary"
-            className="bg-white text-primary hover:bg-white/90 shadow-elegant animate-scale-in"
+            className="bg-white text-primary hover:bg-white/90 shadow-elegant animate-scale-in dark:bg-white/10 dark:text-white"
           >
             Start Analysis
             <ArrowRight className="ml-2 h-5 w-5" />
@@ -71,10 +71,10 @@ export function LandingPage({ onStartAnalysis }: LandingPageProps) {
       </div>
 
       {/* Footer */}
-      <footer className="bg-white/5 backdrop-blur-sm border-t border-white/20 py-8">
+      <footer className="mt-auto bg-white/5 backdrop-blur-sm border-t border-white/20 py-8">
         <div className="container mx-auto px-4">
           <div className="text-center text-white/60">
-            <p>&copy; 2025 Income Equity Analyzer. Promoting financial transparency and wage equity.</p>
+            <p>&copy; 2025 Income Equity Analyzer. Made by: Ayman Alabbasi, Emilio L. Aleman, Bruck Gebre, & Joshua Shields.</p>
           </div>
         </div>
       </footer>

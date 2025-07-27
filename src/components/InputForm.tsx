@@ -44,7 +44,7 @@ export function InputForm({ onBack, onAnalyze }: InputFormProps) {
   const isFormValid = Object.values(formData).every(value => value !== "");
 
   return (
-    <div className="min-h-screen bg-background py-8">
+    <div className="min-h-screen bg-background text-foreground py-8">
       <div className="container mx-auto px-4 max-w-2xl">
         <Button 
           variant="ghost" 
@@ -55,7 +55,7 @@ export function InputForm({ onBack, onAnalyze }: InputFormProps) {
           Back
         </Button>
 
-        <Card className="shadow-elegant bg-gradient-card animate-scale-in">
+        <Card className="shadow-elegant bg-gradient-card text-card-foreground animate-scale-in">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold">
               Tell us about your job and expenses
@@ -151,6 +151,7 @@ export function InputForm({ onBack, onAnalyze }: InputFormProps) {
               <Button 
                 type="submit" 
                 size="lg" 
+                variant="default"
                 className="w-full transition-all duration-200 hover:shadow-elegant"
                 disabled={!isFormValid}
               >
